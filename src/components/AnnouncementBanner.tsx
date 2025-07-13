@@ -1,9 +1,9 @@
-import React from 'react';
-import announcementsData from '../data/announcements.json';
-import { AnnouncementItem } from '../types';
+import React from "react";
+import announcementsData from "../data/announcements.json";
+import { AnnouncementItem } from "../types";
 
 export function AnnouncementBanner() {
-  const activeItems = announcementsData.items.filter(item => item.isActive);
+  const activeItems = announcementsData.items.filter((item) => item.isActive);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isVisible, setIsVisible] = React.useState(true);
 
@@ -26,10 +26,14 @@ export function AnnouncementBanner() {
   const currentItem = activeItems[currentIndex];
 
   return (
-    <div className="rounded-lg bg-primary/10 p-4 backdrop-blur-sm">
-      <div className={`transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        <p className="text-center text-sm text-white">{currentItem.content}</p>
+    <div className="rounded-lg bg-[#F7C60F] text-black dark:bg-primary/10 dark:text-white p-4 backdrop-blur-sm transition-colors">
+      <div
+        className={`transition-opacity duration-500 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <p className="text-center text-sm">{currentItem.content}</p>
       </div>
     </div>
   );
-} 
+}

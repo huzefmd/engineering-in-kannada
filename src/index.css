@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ✅ Custom progress bar color */
 .custom-progress {
-    background: #FFD700;
+  background: #FFD700;
 }
 
+/* ✅ Fixed toast styling */
 .custom-toast {
-    @apply bg-dark text-white rounded-lg shadow-lg;
-    @media (min-width: 768px) {
-    margin-top: 10vh;
-    }
+  /* Replace @apply bg-dark with direct color */
+  background-color: #1A1A1A; /* same as your Tailwind dark color */
+  @apply text-white rounded-lg shadow-lg;
+  margin-top: 10vh;
+}
+
+/* ✅ Responsive adjustment with plain CSS */
+@media (max-width: 768px) {
+  .custom-toast {
+    margin-top: 2vh;
+  }
 }

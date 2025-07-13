@@ -4,17 +4,17 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export function Footer() {
   return (
-    <footer className="bg-dark/50 backdrop-blur-sm border-t border-white/10">
+    <footer className="bg-white dark:bg-dark/50 backdrop-blur-sm border-t dark:border-gray-700 border-gray-400">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-white">
+            <span className="text-xl font-bold text-black dark:text-white">
               Engineering in Kannada
             </span>
           </div>
 
-          <p className="mt-4 max-w-md text-center text-sm text-gray-400">
+          <p className="mt-4 max-w-md text-center text-sm dark:text-gray-400 text-gray-900">
             Empowering Kannada-speaking students with quality engineering
             education. Learn at your own pace, completely free.
           </p>
@@ -24,15 +24,15 @@ export function Footer() {
               href="https://www.youtube.com/@EngineeringinKannada"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary"
+              className="dark:text-gray-400 text-gray-900 hover:text-primary"
             >
-              <Youtube className="h-5 w-5" />
+              <Youtube className="h-5 w-5 " />
             </a>
             <a
               href="https://www.instagram.com/engineering_in_kannada/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary"
+              className="dark:text-gray-400 text-gray-900 hover:text-primary"
             >
               <Instagram className="h-5 w-5" />
             </a>
@@ -40,7 +40,7 @@ export function Footer() {
               href="https://twitter.com/chandansgowdru"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary"
+              className="dark:text-gray-400 text-gray-900 hover:text-primary"
             >
               <FaXTwitter className="h-5 w-5" />
             </a>
@@ -48,13 +48,13 @@ export function Footer() {
               href="https://www.linkedin.com/in/chandan-s-gowda-4b2913183/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary"
+              className="dark:text-gray-400 text-gray-900 hover:text-primary"
             >
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
 
-          <div className="mt-8 text-center text-sm text-gray-400">
+          <div className="mt-8 text-center text-sm dark:text-gray-400 text-gray-900">
             <p>
               © {new Date().getFullYear()} Engineering in Kannada. All rights
               reserved.

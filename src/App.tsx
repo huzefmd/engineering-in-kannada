@@ -8,6 +8,8 @@ import { Blogs } from './pages/Blogs';
 import { BlogPost } from './pages/BlogPost';
 import { LinksPage } from './pages/LinksPage';
 import * as ga from './utils/analytics';
+import ThemeInitializer from "./components/ThemeInitializer";
+
 
 //Google analytics 
 function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
@@ -25,15 +27,17 @@ function AnalyticsWrapper({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <BrowserRouter>
+      <ThemeInitializer/>
       <AnalyticsWrapper>
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/courses" element={<HomePage />} />
           <Route path="/course/:courseId" element={<CoursePage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:slug" element={<BlogPost />} />
-        <Route path="/links" element={<LinksPage />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/links" element={<LinksPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnalyticsWrapper>

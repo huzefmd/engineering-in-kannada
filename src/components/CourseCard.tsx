@@ -27,7 +27,7 @@ export function CourseCard({ course }: CourseCardProps) {
   return (
     <div
       onClick={() => navigate(`/course/${course.id}`)}
-      className="group cursor-pointer overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-[1.02] hover:bg-white/20"
+      className="group cursor-pointer overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm border border-black transition-all duration-300 hover:scale-[1.02] hover:bg-white/20 dark:border-gray-700 hover:shadow-lg hover:shadow-gray-700 "
     >
       <div className="relative h-48 overflow-hidden">
         <img
@@ -59,12 +59,16 @@ export function CourseCard({ course }: CourseCardProps) {
       <div className="p-6">
         <div className="flex items-center gap-2">
           <BookOpen className="h-5 w-5 text-primary" />
-          <span className="text-sm text-gray-400">{totalVideos} videos</span>
+          <span className="text-sm  text-black dark:text-white  ">
+            {totalVideos} videos
+          </span>
         </div>
-        <h3 className="mt-2 text-xl font-semibold text-white">
+        <h3 className="mt-2 text-xl font-semibold text-black dark:text-white">
           {course.title}
         </h3>
-        <p className="mt-2 text-gray-400">{course.description}</p>
+        <p className="mt-2  text-black dark:text-white ">
+          {course.description}
+        </p>
       </div>
     </div>
   );
