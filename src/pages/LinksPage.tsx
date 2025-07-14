@@ -17,23 +17,23 @@ export function LinksPage() {
   const categories = linksData.categories as LinkCategory[];
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen dark:bg-dark bg-white">
       <ScrollToTop />
       <Header />
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-yellow-400 to-primary bg-clip-text text-transparent pb-2">
+            <h1 className="text-4xl md:text-5xl font-bold bg-black dark:bg-gradient-to-r from-primary via-yellow-400 to-primary bg-clip-text text-transparent pb-2">
               Connect With Me
             </h1>
-            <p className="text-gray-300 mt-4">
+            <p className="dark:text-gray-300 text-gray-600  mt-4">
               Find all my profiles and resources in one place
             </p>
           </div>
           
           {categories.map((category) => (
             <div key={category.id} className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-primary pl-4">
+              <h2 className="text-2xl font-bold dark:text-white text-black mb-6 border-l-4 border-primary pl-4">
                 {category.title}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -45,7 +45,7 @@ export function LinksPage() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group cursor-pointer overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-[1.02] hover:bg-white/20"
+                      className="group cursor-pointer overflow-hidden rounded-xl dark:bg-white/10 bg-black/70 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-[1.02] dark:hover:bg-white/20 hover:bg-black/90 hover:shadow-gray-600 hover:shadow-2xl dark:hover:shadow-none"
                     >
                       <div className="relative h-48 overflow-hidden">
                         <img
@@ -66,7 +66,7 @@ export function LinksPage() {
                       </div>
                       <div className="p-6">
                         <div className="flex items-center gap-2">
-                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20  flex items-center justify-center">
                             {link.icon ? <DynamicIcon iconName={link.icon} /> : <ExternalLink className="w-4 h-4 text-primary" />}
                           </div>
                           {/* <span className="text-sm text-gray-400">{link.id}</span> */}
@@ -75,7 +75,7 @@ export function LinksPage() {
                           {link.title}
                           <ExternalLink className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                         </h3>
-                        <p className="mt-2 text-gray-400">{link.description}</p>
+                        <p className="mt-2 dark:text-gray-400 text-gray-200">{link.description}</p>
                       </div>
                     </a>
                   ) : (

@@ -10,17 +10,17 @@ export function Blogs() {
   const blogs = getBlogPosts();
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen dark:bg-dark bg-white">
       <ScrollToTop /> {/* 🟢 Add ScrollToTop component */}
       <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-0.5 w-12 bg-primary/50"></div>
-            <BookOpen className="h-6 w-6 text-primary" />
-            <div className="h-0.5 w-12 bg-primary/50"></div>
+            <div className="h-0.5 w-12 dark:bg-primary/50 bg-black"></div>
+            <BookOpen className="h-6 w-6 dark:text-primary text-black" />
+            <div className="h-0.5 w-12 dark:bg-primary/50 bg-black"></div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-yellow-400 to-primary bg-clip-text text-transparent pb-2">
+          <h1 className="text-4xl md:text-5xl font-bold  bg-black  dark:bg-gradient-to-r from-primary via-yellow-400 to-primary bg-clip-text text-transparent pb-2">
             Explore Our Tech Blogs
           </h1>
         </div>
@@ -29,17 +29,21 @@ export function Blogs() {
             <Link
               key={blog.slug}
               to={`/blogs/${blog.slug}`}
-              className="group cursor-pointer overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-[1.02] hover:bg-white/20"
+              className="group cursor-pointer overflow-hidden rounded-xl dark:bg-white/10  bg-black backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-[1.02] dark:hover:bg-white/20"
             >
               <div className="p-6">
                 <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-primary" />
-                    <span>{blog.metadata.author}</span>
+                    <span className="text-white dark:text-gray-400">
+                      {blog.metadata.author}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-primary" />
-                    <span>{new Date(blog.metadata.date).toLocaleDateString()}</span>
+                    <span className="text-white dark:text-gray-400">
+                      {new Date(blog.metadata.date).toLocaleDateString()}
+                    </span>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3 leading-tight">
