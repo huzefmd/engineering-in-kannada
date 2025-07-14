@@ -14,7 +14,7 @@ import { dispatchToast } from '../utils/toastWithCustomMessages';
 import { useBreakpoint } from '../utils/useBreakPoint';
 
 // Create a component to render the video list
-const VideoList = React.lazy(() => {
+const   VideoList = React.lazy(() => {
   const VideoListComponent = ({ courseId }: { courseId: string }) => {
     const [videos, setVideos] = React.useState<Video[]>([]);
     const { completedVideos } = useProgressStore();
@@ -34,8 +34,8 @@ const VideoList = React.lazy(() => {
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-white">Progress: {Math.round(progress)}%</h3>
-          <div className="h-2 w-32 rounded-full bg-white/10">
+          <h3 className="text-lg font-semibold dark:text-white text-black">Progress: {Math.round(progress)}%</h3>
+          <div className="h-2 w-32 rounded-full dark:bg-white/10 bg-black/70">
           <ToastContainer
           toastClassName={'custom-toast'}
           />
@@ -101,7 +101,7 @@ export function CoursePage() {
   
   if (!course) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-dark">
+      <div className="flex min-h-screen items-center justify-center dark:bg-dark bg-white">
         <ScrollToTop /> {/* 🟢 Add ScrollToTop component */}
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white">Course not found</h2>
@@ -114,14 +114,14 @@ export function CoursePage() {
   }
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen dark:bg-dark bg-white/10  ">
       <ScrollToTop /> {/* 🟢 Add ScrollToTop component */}
       <Header />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white"
+            className="inline-flex items-center gap-2 dark:text-white/60 text-black dark:hover:text-white hover:text-black"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to courses
@@ -129,20 +129,20 @@ export function CoursePage() {
         </div>
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-white sm:text-4xl flex items-center gap-3">
+            <h1 className="text-3xl font-bold dark:text-white text-black sm:text-4xl flex items-center gap-3">
               {course.title}
               <button
                 onClick={handleShare}
-                className="ml-2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                className="ml-2 p-2 rounded-full dark:bg-white/10 bg-black text-white hover:bg-white/20 transition-colors"
                 aria-label="Share course"
               >
                 <Share2 className="h-5 w-5" />
               </button>
             </h1>
-            <p className="mt-2 text-white/60">{course.description}</p>
+            <p className="mt-2 dark:text-white/60 text-black/70">{course.description}</p>
           </div>
         </div>
-        <Suspense fallback={<div className="text-white">Loading videos...</div>}>
+        <Suspense fallback={<div className="dark:text-white text-black">Loading videos...</div>}>
           <VideoList courseId={courseId!} />
         </Suspense>
       </main>

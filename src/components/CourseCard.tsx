@@ -27,7 +27,7 @@ export function CourseCard({ course }: CourseCardProps) {
   return (
     <div
       onClick={() => navigate(`/course/${course.id}`)}
-      className="group cursor-pointer overflow-hidden rounded-xl bg-white/10  backdrop-blur-sm border border-gray-300 transition-all duration-300 hover:scale-[1.02] hover:bg-white/20 dark:border-gray-700 hover:shadow-lg hover:shadow-gray-700 "
+      className="group cursor-pointer overflow-hidden rounded-xl bg-white/10   backdrop-blur-sm border border-gray-300 transition-all duration-300 hover:scale-[1.02] hover:bg-white/20 dark:border-gray-700 hover:shadow-lg hover:shadow-gray-700 "
     >
       <div className="relative h-48 overflow-hidden">
         <img

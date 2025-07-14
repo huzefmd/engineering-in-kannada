@@ -176,11 +176,11 @@ export function VideoCard({ video }: VideoCardProps) {
 
   return (
     <>
-      <div className="rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 p-4 sm:p-6 transition-all duration-300 hover:bg-white/20">
+      <div className="rounded-lg dark:bg-white/10 bg-black/80  backdrop-blur-sm border border-white/20 p-4 sm:p-6 transition-all duration-300 dark:hover:bg-white/20 hover:bg-black hover:scale-105">
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-3">
-              <h3 className="text-base font-semibold text-white sm:text-lg">
+              <h3 className="text-base font-semibold text-white  sm:text-lg">
                 {video.title}
               </h3>
             </div>
@@ -249,7 +249,7 @@ export function VideoCard({ video }: VideoCardProps) {
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20"
             onClick={() => handleNotesAndVideoClick(video.notesUrl)}
           >
-            <FileText className="h-4 w-4" />
+            <FileText className="h-4 w-4 " />
             View Notes
           </button>
           {video.codingQuestionUrl && (
